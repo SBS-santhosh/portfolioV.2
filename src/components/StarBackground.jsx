@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-// id, size, x, y, opacity, anim Duration
-// id, size, x, y, delay, anim Duration
+// id, size, x, y, opacity, animationDuration
+// id, size, x, y, delay, animationDuration
 
 export const StarBackground = () => {
   const [stars, setStars] = useState([]);
@@ -22,7 +22,7 @@ export const StarBackground = () => {
 
   const generateStars = () => {
     const numberOfStars = Math.floor(
-      (window.innerWidth * window.innerHeight) / 20000
+      (window.innerWidth * window.innerHeight) / 10000
     );
 
     const newStars = [];
