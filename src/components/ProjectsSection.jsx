@@ -1,4 +1,4 @@
-import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 const projects = [
   {
     id: 1,
@@ -9,7 +9,6 @@ const projects = [
     tags: ["Stage", "XEFI", "Sannois"],
     demoUrl:
       "https://drive.google.com/drive/folders/1uR4cI2NWMntxLgwFTPUlVuI78uHnlRT9?usp=sharing",
-    githubUrl: "#",
     date: "2025-05-30",
   },
   {
@@ -21,7 +20,6 @@ const projects = [
     tags: ["Stage", "Tekwave", "Bondy"],
     demoUrl:
       "https://drive.google.com/drive/folders/1Yk5rtkEuymYIwcxrQARbezshRJNYA3Pn?usp=drive_link",
-    githubUrl: "#",
     date: "2024-02-30",
   },
   {
@@ -33,7 +31,6 @@ const projects = [
     tags: ["Stage", "GK Multiservice", "Bobigny"],
     demoUrl:
       "https://drive.google.com/drive/folders/1LsPD_AXkQb2A-ke2So0Yj3agY4Pq3Xir?usp=drive_link",
-    githubUrl: "#",
     date: "2022-12-26",
   },
 ];
@@ -86,13 +83,6 @@ export const ProjectsSection = () => {
                       className="text-foreground/80 hover:text-primary transition-colors duration-300"
                     >
                       <ExternalLink size={20} />
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <Github size={20} />
                     </a>
                   </div>
                 </div>
