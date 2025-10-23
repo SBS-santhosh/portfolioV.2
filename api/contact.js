@@ -44,45 +44,59 @@ export default async function handler(req, res) {
       year: "2-digit",
     });
 
-    // Email to YOU
-    const notificationToYou = {
-      from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_USER,
-      subject: `📬 Nouveau message de ${name}`,
-      html: `
-        <div style="font-family: Arial, sans-serif; padding: 20px;">
-          <h2>📩 Nouveau message depuis ton portfolio</h2>
-          <p><strong>Nom :</strong> ${name}</p>
-          <p><strong>Email :</strong> ${email}</p>
-          <p><strong>Sujet :</strong> ${subject || "Sans sujet"}</p>
-          <p><strong>Message :</strong></p>
-          <p style="white-space: pre-wrap;">${message}</p>
-          <hr />
-          <small>📅 Reçu le ${currentDate}</small>
-        </div>
-      `,
-      replyTo: email,
-    };
 
-    // Auto reply to the sender
-    const autoReplyToCustomer = {
-      from: `"Santhosh Satheeskumar" <${process.env.EMAIL_USER}>`,
-      to: email,
-      subject: "✅ Votre message a bien été envoyé !",
-      html: `
-        <div style="font-family: Arial, sans-serif; padding: 20px;">
-          <h2>Merci pour votre message, ${name} !</h2>
-          <p>Votre message a bien été reçu. Je vous répondrai dès que possible.</p>
-          <hr />
-          <p><strong>Récapitulatif :</strong></p>
-          <p><strong>Sujet :</strong> ${subject || "Sans sujet"}</p>
-          <p><strong>Message :</strong></p>
-          <p style="white-space: pre-wrap;">${message}</p>
-          <br/>
-          <p>— <strong>Santhosh Satheeskumar</strong></p>
-        </div>
-      `,
-    };
+  // Email to YOU
+const notificationToYou = {
+  from: `"Portfolio Contact V.2" <${process.env.EMAIL_USER}>`,
+  to: process.env.EMAIL_USER,
+  subject: ` Nouveau message de ${name}`,
+  html: `
+    <div style="font-family: Arial, sans-serif; background-color:#f9fafb; padding:20px; border-radius:8px;">
+      <h2 style="color:#2563eb; margin-bottom:10px;">💬 Nouveau message depuis ton portfolioV.2</h2>
+      <p><strong>Nom :</strong> ${name}</p>
+      <p><strong>Email :</strong> <a href="mailto:${email}" style="color:#2563eb;">${email}</a></p>
+      <p><strong>Sujet :</strong> ${subject || "Sans sujet"}</p>
+      <p><strong>Message :</strong></p>
+      <div style="background:#fff; padding:12px 16px; border-left:4px solid #2563eb; border-radius:4px; margin:8px 0;">
+        <p style="white-space: pre-wrap; margin:0;">${message}</p>
+      </div>
+      <hr style="margin:20px 0; border:none; border-top:1px solid #e5e7eb;" />
+      <p style="font-size:14px; color:#4b5563;">
+        <strong>Don't be dampass lazy shit replay them</strong><br/>
+        <small style="color:#6b7280;">Reçu le ${currentDate}</small>
+      </p>
+    </div>
+  `,
+  replyTo: email,
+};
+
+
+  // Auto reply to the sender
+const autoReplyToCustomer = {
+  from: `"Santhosh Satheeskumar" <${process.env.EMAIL_USER}>`,
+  to: email,
+  subject: "✅ Votre message a bien été envoyé !",
+  html: `
+    <div style="font-family: Arial, sans-serif; background-color:#f9fafb; padding:20px; border-radius:8px;">
+      <h2 style="color:#2563eb; margin-bottom:15px;">Bonjour ${name},</h2>
+      <p>Merci beaucoup pour votre message ! 📩</p>
+      <p>Votre message a bien été reçu et je vous répondrai dès que possible.</p>
+
+      <hr style="margin:20px 0; border:none; border-top:1px solid #e5e7eb;" />
+
+      <div style="background:#fff; padding:15px 20px; border-left:4px solid #2563eb; border-radius:4px;">
+        <p><strong>Récapitulatif :</strong></p>
+        <p><strong>Sujet :</strong> ${subject || "Sans sujet"}</p>
+        <p><strong>Message :</strong></p>
+        <p style="white-space: pre-wrap; margin:0;">${message}</p>
+      </div>
+      <p style="margin-top:20px; font-style:italic; color:#6b7280;">  ⚠️ Ceci est un message automatique depuis le formulaire de contact du portfolio.  </p>
+      <p style="margin-top:20px;">Merci encore pour votre prise de contact !</p>
+      <p>— <strong>Santhosh Satheeskumar</strong></p>
+    </div>
+  `,
+};
+
 
     // Send both emails in parallel
     await Promise.all([

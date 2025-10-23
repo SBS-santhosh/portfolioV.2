@@ -49,6 +49,7 @@ const skills = [
 ];
 
 const categories = [
+  { id: "all", label: "Toutes les compétences" }, // ✅ Added
   { id: "langages", label: "Langages" },
   { id: "databases", label: "Bases de données" },
   { id: "frameworks", label: "Frameworks" },
@@ -71,6 +72,7 @@ export const SkillsSection = () => {
           Mes <span className="text-primary">Compétences</span>
         </h2>
 
+        {/* Category buttons */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map((category) => (
             <button
@@ -88,6 +90,7 @@ export const SkillsSection = () => {
           ))}
         </div>
 
+        {/* Skills grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
           {filteredSkills.map((skill, index) => (
             <div
