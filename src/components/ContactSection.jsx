@@ -1,6 +1,7 @@
 import { Linkedin, Mail, MapPin, Phone, Send, Twitter } from "lucide-react";
 import { useState } from "react";
 
+
 export const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -15,7 +16,7 @@ export const ContactSection = () => {
     setIsSending(true);
 
     try {
-      const res = await fetch("/api/contact", {
+   const res = await fetch("/api/contact", { 
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
