@@ -3,18 +3,43 @@ import { useState } from "react";
 
 export const ContactSection = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
+  const [isSending, setIsSending] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSending(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        alert(`✅ Merci ${formData.name}, ton message a été envoyé avec succès !`);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        alert("❌ Une erreur est survenue. Merci de réessayer.");
+      }
+    } catch (err) {
+      console.error("Error:", err);
+      alert("Erreur serveur. Réessaye plus tard.");
+    } finally {
+      setIsSending(false);
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
@@ -25,12 +50,11 @@ export const ContactSection = () => {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Contact Information */}
+          {/* Contact Info */}
           <div className="space-y-8">
             <h3 className="text-2xl font-semibold mb-6">Informations</h3>
 
             <div className="space-y-6">
-              {/* Email */}
               <div className="flex items-start space-x-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   <Mail className="h-6 w-6 text-primary" />
@@ -46,7 +70,6 @@ export const ContactSection = () => {
                 </div>
               </div>
 
-              {/* Phone */}
               <div className="flex items-start space-x-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   <Phone className="h-6 w-6 text-primary" />
@@ -62,21 +85,18 @@ export const ContactSection = () => {
                 </div>
               </div>
 
-              {/* Location */}
               <div className="flex items-start space-x-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
                 <div>
                   <h4 className="font-medium">Localisation</h4>
-                  <span className="text-muted-foreground">
-                    Paris, France
-                  </span>
+                  <span className="text-muted-foreground">Paris, France</span>
                 </div>
               </div>
             </div>
 
-            {/* Social Links */}
+            {/* Social links */}
             <div className="pt-8">
               <h4 className="font-medium mb-4">Réseaux sociaux</h4>
               <div className="flex space-x-4 justify-center md:justify-start">
@@ -84,7 +104,6 @@ export const ContactSection = () => {
                   href="https://fr.linkedin.com/in/satheeskumar-santhosh-40288726a"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="LinkedIn"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Linkedin size={24} />
@@ -93,7 +112,6 @@ export const ContactSection = () => {
                   href="https://twitter.com/not_santhosh"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Twitter"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Twitter size={24} />
@@ -106,25 +124,14 @@ export const ContactSection = () => {
           <div className="bg-card p-8 rounded-lg shadow-xs">
             <h3 className="text-2xl font-semibold mb-6">Envoyez un message</h3>
 
-            <form
-              action="https://api.web3forms.com/submit"
-              method="POST"
-              className="space-y-6"
-            >
-              <input
-                type="hidden"
-                name="access_key"
-                value="f31466ea-81ed-497a-926f-cfd0393c27be"
-              />
-
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  Votre nom
-                </label>
+                <label className="block text-sm font-medium mb-2">Votre nom</label>
                 <input
                   type="text"
-                  id="name"
                   name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder="Votre nom"
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
@@ -132,57 +139,49 @@ export const ContactSection = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
-                  Votre email
-                </label>
+                <label className="block text-sm font-medium mb-2">Votre email</label>
                 <input
                   type="email"
-                  id="email"
                   name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="Votre email"
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
 
-              {/* Subject Field */}
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                  Sujet
-                </label>
+                <label className="block text-sm font-medium mb-2">Sujet</label>
                 <input
                   type="text"
-                  id="subject"
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  placeholder="De quoi s'agit-il ?"
-                  required
+                  placeholder="Sujet (facultatif)"
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium mb-2"
-                >
-                  Votre message
-                </label>
+                <label className="block text-sm font-medium mb-2">Votre message</label>
                 <textarea
-                  id="message"
                   name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   placeholder="Votre message"
                   required
+                  rows={5}
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
                 />
               </div>
 
               <button
                 type="submit"
-                className="cosmic-button w-full flex items-center justify-center gap-2"
+                disabled={isSending}
+                className="cosmic-button w-full flex items-center justify-center gap-2 disabled:opacity-70"
               >
-                Envoyer
+                {isSending ? "Envoi..." : "Envoyer"}
                 <Send size={16} />
               </button>
             </form>
