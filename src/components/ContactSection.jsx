@@ -1,6 +1,22 @@
 import { Linkedin, Mail, MapPin, Phone, Send, Twitter } from "lucide-react";
+import { useState } from "react";
 
 export const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
@@ -124,6 +140,23 @@ export const ContactSection = () => {
                   id="email"
                   name="email"
                   placeholder="Votre email"
+                  required
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+              </div>
+
+              {/* Subject Field */}
+              <div>
+                <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                  Sujet
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  placeholder="De quoi s'agit-il ?"
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                 />
