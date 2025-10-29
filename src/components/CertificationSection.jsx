@@ -19,9 +19,9 @@ const certifications = [
     title: "AWS Academy Cloud Developing",
     description:
       "En cours : Développement et maintenance d'applications sur la plateforme AWS, incluant les services principaux et les bonnes pratiques.",
-    image: "/certifications/AWS Academy Cloud Developing.png",
+    image: "/certifications/aws-academy-graduate-cloud-developing-training-badg.png",
     tags: ["AWS", "Cloud", "Developer"],
-    credentialUrl: "votre-url-certificat-cloud-developing",
+    credentialUrl: "https://www.credly.com/badges/a05f6de0-95bd-4eae-96cc-90d873c76d59/public_url",
     date: "2024",
   },
   {
