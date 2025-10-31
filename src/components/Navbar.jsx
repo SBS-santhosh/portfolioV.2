@@ -14,19 +14,21 @@ const navItems = [
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
     if (isMenuOpen) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.body.style.overflow = "hidden";
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
     } else {
       document.body.style.overflow = "unset";
+      document.body.style.paddingRight = "0px";
     }
     return () => {
       document.body.style.overflow = "unset";
+      document.body.style.paddingRight = "0px";
     };
   }, [isMenuOpen]);
 
-  // Close menu on escape key
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === "Escape" && isMenuOpen) {
@@ -55,7 +57,6 @@ export const Navbar = () => {
           </span>
         </a>
 
-        {/* Desktop nav */}
         <div className="hidden md:flex space-x-8">
           {navItems.map((item, key) => (
             <a
@@ -68,7 +69,6 @@ export const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile nav toggle */}
         <button
           onClick={() => setIsMenuOpen((prev) => !prev)}
           className="md:hidden p-2 text-foreground relative z-50 hover:bg-foreground/10 rounded-lg transition-colors"
@@ -78,7 +78,6 @@ export const Navbar = () => {
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* Mobile menu overlay */}
         {isMenuOpen && (
           <div
             className="fixed inset-0 bg-black/50 z-30 md:hidden"
@@ -87,11 +86,10 @@ export const Navbar = () => {
           />
         )}
 
-        {/* Mobile menu */}
         <div
           className={cn(
-            "fixed top-0 right-0 h-full w-64 bg-background/95 backdrop-blur-md z-40",
-            "flex flex-col pt-24 px-6 shadow-2xl",
+            "fixed top-0 right-0 h-full w-64 bg-background/30 backdrop-blur-md z-40",
+            "flex flex-col pt-24 px-6 shadow-2xl border-l border-foreground/10",
             "transition-transform duration-300 ease-in-out md:hidden",
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           )}
