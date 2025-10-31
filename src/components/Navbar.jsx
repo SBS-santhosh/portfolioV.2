@@ -43,7 +43,7 @@ export const Navbar = () => {
     <nav
       className={cn(
         "fixed w-full z-40 transition-all duration-300 py-4",
-        "bg-background/30 backdrop-blur-md shadow-sm"
+        "bg-background/80 backdrop-blur-lg shadow-lg border-b border-primary/20"
       )}
     >
       <div className="container max-w-3xl mx-auto flex items-center justify-between px-4">
@@ -52,8 +52,8 @@ export const Navbar = () => {
           href="#hero"
           onClick={() => setIsMenuOpen(false)}
         >
-          <span className="relative z-10">
-            <span className="text-glow text-foreground">ToTech</span> Portfolio
+          <span className="relative z-10 bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">
+            <span className="font-extrabold">ToTech</span> Portfolio
           </span>
         </a>
 
@@ -62,7 +62,7 @@ export const Navbar = () => {
             <a
               key={key}
               href={item.href}
-              className="text-foreground/80 hover:text-primary transition-colors duration-300 text-lg"
+              className="text-foreground hover:text-primary transition-all duration-300 text-lg font-medium hover:scale-105"
             >
               {item.name}
             </a>
@@ -71,7 +71,7 @@ export const Navbar = () => {
 
         <button
           onClick={() => setIsMenuOpen((prev) => !prev)}
-          className="md:hidden p-2 text-foreground relative z-50 hover:bg-foreground/10 rounded-lg transition-colors"
+          className="md:hidden p-2 text-foreground relative z-50 hover:bg-primary/10 rounded-lg transition-colors"
           aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
           aria-expanded={isMenuOpen}
         >
@@ -80,7 +80,7 @@ export const Navbar = () => {
 
         {isMenuOpen && (
           <div
-            className="fixed inset-0 bg-black/50 z-30 md:hidden"
+            className="fixed inset-0 bg-black/60 z-30 md:hidden backdrop-blur-sm"
             onClick={() => setIsMenuOpen(false)}
             aria-hidden="true"
           />
@@ -88,8 +88,8 @@ export const Navbar = () => {
 
         <div
           className={cn(
-            "fixed top-0 right-0 h-full w-64 bg-background/30 backdrop-blur-md z-40",
-            "flex flex-col pt-24 px-6 shadow-2xl border-l border-foreground/10",
+            "fixed top-0 right-0 h-full w-64 bg-background/95 backdrop-blur-xl z-40",
+            "flex flex-col pt-24 px-6 shadow-2xl border-l border-primary/30",
             "transition-transform duration-300 ease-in-out md:hidden",
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           )}
@@ -99,7 +99,7 @@ export const Navbar = () => {
               <a
                 key={key}
                 href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-300 text-lg py-2 border-b border-foreground/10 hover:border-primary/50"
+                className="text-foreground hover:text-primary transition-colors duration-300 text-lg py-2 border-b border-foreground/10 hover:border-primary/50 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
