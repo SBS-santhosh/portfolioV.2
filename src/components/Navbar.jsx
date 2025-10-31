@@ -43,7 +43,7 @@ export const Navbar = () => {
     <nav
       className={cn(
         "fixed w-full z-40 transition-all duration-300 py-4",
-        "bg-background/75 backdrop-blur-md shadow-lg border-b border-primary/20"
+        "bg-background shadow-lg border-b border-primary/20"
       )}
     >
       <div className="container max-w-3xl mx-auto flex items-center justify-between px-4">
