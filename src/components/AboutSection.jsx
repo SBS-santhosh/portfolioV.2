@@ -37,7 +37,7 @@ export const AboutSection = () => {
               {/* Bouton de téléchargement du CV */}
               <a
                 href="/CV stage 2025.pdf"
-                download="Satheeskumar_SANTHOSH_CV_2025.pdf"
+                download="CV stage 2025.pdf"
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
                 Télécharger le CV
