@@ -125,48 +125,48 @@ export const VeilleTechSection = () => {
   ];
 
   // Base quiz questions (without randomization)
-  const baseQuizQuestions = [
-    {
-      q: "Qu'est-ce que le Low Code ?",
-      options: [
-        { id: 'a', text: "Créer des applications avec peu de code", correct: true },
-        { id: 'b', text: "Écrire du code en langage machine", correct: false },
-        { id: 'c', text: "Concevoir des sites web sans interface graphique", correct: false }
-      ]
-    },
-    {
-      q: "Donne un exemple de plateforme Low Code",
-      options: [
-        { id: 'a', text: "Microsoft Power Apps", correct: true },
-        { id: 'b', text: "Visual Studio Code", correct: false },
-        { id: 'c', text: "GitHub", correct: false }
-      ]
-    },
-    {
-      q: "Quel est l'avantage principal du Low Code ?",
-      options: [
-        { id: 'a', text: "Développement rapide", correct: true },
-        { id: 'b', text: "Plus de lignes de code à écrire", correct: false },
-        { id: 'c', text: "Complexité accrue du projet", correct: false }
-      ]
-    },
-    {
-      q: "Le Low Code nécessite-t-il beaucoup de connaissances en programmation ?",
-      options: [
-        { id: 'a', text: "Oui, c'est réservé aux experts", correct: true },
-        { id: 'b', text: "Non", correct: false },
-        { id: 'c', text: "Uniquement pour les développeurs back-end", correct: false }
-      ]
-    },
-    {
-      q: "Le Low Code peut-il être utilisé par les entreprises et les étudiants ?",
-      options: [
-        { id: 'a', text: "Oui", correct: true },
-        { id: 'b', text: "Non, uniquement par les grandes entreprises", correct: false },
-        { id: 'c', text: "Uniquement par les étudiants", correct: false }
-      ]
-    }
-  ];
+const baseQuizQuestions = [
+  {
+    q: "Qu'est-ce que le Low Code ?",
+    options: [
+      { id: "B", text: "Créer des applications sans écrire de code", correct: false },
+      { id: "A", text: "Développer avec des blocs de code visuels", correct: true },
+      { id: "C", text: "Un langage de programmation", correct: false },
+    ],
+  },
+  {
+    q: "Quel est l'objectif principal du No Code ?",
+    options: [
+      { id: "B", text: "Remplacer les développeurs professionnels", correct: false },
+      { id: "C", text: "Créer des logiciels système", correct: false },
+      { id: "A", text: "Permettre à tout le monde de créer des applications", correct: true },
+    ],
+  },
+  {
+    q: "Quelle plateforme est un outil No Code populaire ?",
+    options: [
+      { id: "A", text: "Make.com", correct: true },
+      { id: "B", text: "OutSystems", correct: false },
+      { id: "C", text: "Power Apps", correct: false },
+    ],
+  },
+  {
+    q: "Quelle autre plateforme est un outil No Code intéressant ?",
+    options: [
+      { id: "A", text: "Cursor.ai", correct: true },
+      { id: "B", text: "Mendix", correct: false },
+      { id: "C", text: "Microsoft Excel", correct: false },
+    ],
+  },
+  {
+    q: "Quel est un avantage du Low Code / No Code ?",
+    options: [
+      { id: "B", text: "Complexité accrue du projet", correct: false },
+      { id: "C", text: "Limite totale de personnalisation", correct: false },
+        { id: "A", text: "Rapidité de développement", correct: true },
+    ],
+  },
+];
 
   // Quiz questions with randomized option positions (re-randomizes when quizKey changes)
   const quizQuestions = useMemo(() => {
