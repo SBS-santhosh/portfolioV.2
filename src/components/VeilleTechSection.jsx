@@ -265,7 +265,7 @@ const baseQuizQuestions = [
                     ) : null}
                   </div>
                   <span className={showFeedback && isCorrect ? 'font-semibold' : ''}>
-                    {option.id}) {option.text}
+                    {option.text}
                   </span>
                   {showFeedback && isCorrect && (
                     <CheckCircle className="w-5 h-5 text-green-500 ml-auto" />
