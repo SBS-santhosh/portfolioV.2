@@ -5,7 +5,7 @@ const projects = [
     title: "Rapport de stage XEFI Sannois",
     description:
       "Rapport de stage effectué du 26 mai au 25 juillet 2025 chez XEFI Sannois.",
-    image: "/projects/Logo xefi.png",
+    image: "/exeprience/Logo xefi.png",
     tags: ["Stage", "XEFI", "Sannois"],
     demoUrl:
       "https://drive.google.com/drive/folders/1uR4cI2NWMntxLgwFTPUlVuI78uHnlRT9?usp=sharing",
@@ -16,7 +16,7 @@ const projects = [
     title: "Rapport de stage Tekwave",
     description:
       "Rapport de stage effectué du 15 janvier au 9 février 2024 chez Tekwave, Bondy.",
-    image: "/projects/Logo Tekwave.jpg",
+    image: "/exeprience/Logo Tekwave.jpg",
     tags: ["Stage", "Tekwave", "Bondy"],
     demoUrl:
       "https://drive.google.com/drive/folders/1Yk5rtkEuymYIwcxrQARbezshRJNYA3Pn?usp=drive_link",
@@ -27,7 +27,7 @@ const projects = [
     title: "Rapport de stage GK",
     description:
       "Rapport de stage effectué du 21 novembre au 16 décembre 2022 chez GK Multiservice, Bobigny.",
-    image: "/projects/Logo GK.jpg",
+    image: "/exeprience/Logo GK.jpg",
     tags: ["Stage", "GK Multiservice", "Bobigny"],
     demoUrl:
       "https://drive.google.com/drive/folders/1LsPD_AXkQb2A-ke2So0Yj3agY4Pq3Xir?usp=drive_link",
@@ -41,7 +41,7 @@ export const ProjectsSection = () => {
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
           {" "}
-         Projet <span className="text-primary"> Professionnels </span>
+         Expérience <span className="text-primary"> professionnelle </span>
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
@@ -91,15 +91,7 @@ export const ProjectsSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <a
-            className="cosmic-button w-fit flex items-center mx-auto gap-2"
-            target="_blank"
-            href="https://github.com/SBS-santhosh"
-          >
-            Check My Github <ArrowRight size={16} />
-          </a>
-        </div>
+
       </div>
     </section>
   );
