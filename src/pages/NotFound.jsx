@@ -1,16 +1,17 @@
-import { Link } from "react-router-dom"; // Assuming react-router-dom is used, otherwise just <a>
+import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import notFoundImg from "../assets/NotFound.png";
 
 export const NotFound = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-background p-4">
       <div className="max-w-2xl w-full text-center space-y-8">
         {/* "Big Bear" Image */}
-        <div className="relative w-full aspect-video md:aspect-[16/9] overflow-hidden rounded-xl shadow-2xl animate-fadeIn">
+        <div className="relative w-64 mx-auto animate-fadeIn">
              <img 
-               src="/NotFound.png" 
+               src={notFoundImg} 
                alt="Page Not Found" 
-               className="w-full h-full object-cover"
+               className="w-full h-auto object-contain"
              />
         </div>
         
