@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ExternalLink, ArrowRight, Github } from "lucide-react";
+import { ExternalLink, ArrowRight, Github, Download } from "lucide-react";
 
 const personalProjects = [
   {
@@ -164,13 +164,21 @@ export const ShowcaseSection = () => {
             ))}
         </div>
         
-        <div className="mt-12">
+        <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-4">
           <a
             className="cosmic-button w-fit flex items-center gap-2"
             target="_blank"
             href="https://github.com/SBS-santhosh"
           >
             Check My Github <ArrowRight size={16} />
+          </a>
+
+          <a
+            className="cosmic-button w-fit flex items-center gap-2"
+            href="/files/Annexe-6-1-Tableau-Synthese-Epreuve-E4-BTS-SIO-2022.xlsx"
+            download="Tableau-Synthese-Epreuve-E4-BTS-SIO-2022.xlsx"
+          >
+            Tableau Synthèse <Download size={16} />
           </a>
         </div>
 
