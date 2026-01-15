@@ -63,6 +63,7 @@ export const VeilleTechSection = () => {
           },
           {
             name: "Newsletters",
+            tool: "N/A",
             examples: ["NoCode.tech Weekly", "Product Hunt", "Makerpad Updates"]
           }
         ]
@@ -80,7 +81,7 @@ export const VeilleTechSection = () => {
             title: "Microsoft Power Platform intègre Copilot (IA)",
             description: "Microsoft permet maintenant de créer des applications en langage naturel grâce à Copilot dans Power Apps.",
             impact: "Révolution de la création d'apps par IA",
-            example: "Exemple concret : un utilisateur peut écrire 'Créer une appli de suivi de ventes' et l'IA génère la structure de l'application automatiquement.",
+            example: "un utilisateur peut écrire 'Créer une appli de suivi de ventes' et l'IA génère la structure de l'application automatiquement.",
             link: "https://www.microsoft.com/en-us/dynamics-365/blog/business-leader/2024/01/25/2024-release-wave-1-plans-for-microsoft-dynamics-365-and-power-platform-now-available/"
           },
           {
@@ -88,7 +89,7 @@ export const VeilleTechSection = () => {
             title: "Bubble lève 100 millions de dollars",
             description: "Bubble renforce ses outils IA et sa sécurité grâce à cette levée de fonds.",
             impact: "Confiance du marché dans le No Code",
-            example: "Exemple concret : Bubble peut maintenant améliorer son générateur d'applications sans code pour les startups.",
+            example: "Bubble peut maintenant améliorer son générateur d'applications sans code pour les startups.",
             link: "https://www.reuters.com/technology/no-code-startup-bubble-raises-100-mln-in-round-led-by-insight-partners-2021-07-27/"
           },
           {
@@ -96,7 +97,7 @@ export const VeilleTechSection = () => {
             title: "Google lance AppSheet AI",
             description: "Google AppSheet utilise l'IA pour générer automatiquement des workflows.",
             impact: "Automatisation intelligente des processus",
-            example: "Exemple concret : en fournissant un tableau de données, AppSheet crée automatiquement un processus d'approbation et notifications.",
+            example: "en fournissant un tableau de données, AppSheet crée automatiquement un processus d'approbation et notifications.",
             link: "https://discuss.google.dev/t/announcing-ai-assisted-app-creation-with-gemini-in-appsheet/153205"
           },
           {
@@ -104,7 +105,7 @@ export const VeilleTechSection = () => {
             title: "Adoption dans les écoles",
             description: "Certaines écoles spécialisées intègrent le No Code dans leurs formations.",
             impact: "Démocratisation de l'enseignement tech",
-            example: "Exemple concret : Epitech Digital School propose des bootcamps 'Low Code / No Code' pour ses étudiants.",
+            example: "Epitech Digital School propose des bootcamps 'Low Code / No Code' pour ses étudiants.",
             link: "https://www.epitech.digital/lowcode-nocode-epitech-digital-school/?utm_source=chatgpt.com"
           }
         ]
@@ -509,27 +510,35 @@ const baseQuizQuestions = [
 
       case 2:
         return (
-          <div className="space-y-4">
-            <h3 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4">III. Outils de Veille</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+          <div className="space-y-6">
+            <h3 className="text-xl md:text-2xl font-semibold mb-6">III. Outils de Veille</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {sections[2].content.tools.map((tool, index) => (
-                <div key={index} className="bg-muted/50 p-3 md:p-4 rounded-lg border-l-4 border-primary">
-                  <h4 className="font-semibold text-xs md:text-sm mb-2 text-primary">{tool.name}</h4>
-                  <p className="text-[10px] md:text-xs text-muted-foreground mb-2">
-                    <strong>Outil :</strong> {tool.tool || "N/A"}
-                  </p>
-                  <div className="flex flex-wrap gap-1">
+                <div key={index} className="bg-card/50 p-6 rounded-xl border border-border/50 hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-md">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="p-2 rounded-lg bg-primary/10">
+                      <Search className="w-5 h-5 text-primary" />
+                    </div>
+                    <h4 className="font-bold text-lg text-primary">{tool.name}</h4>
+                  </div>
+                  
+                  <div className="mb-4">
+                    <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Outil :</span>
+                    <p className="text-sm font-medium">{tool.tool || "N/A"}</p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
                     {tool.sources?.map((source, idx) => (
-                      <span key={idx} className="px-2 py-0.5 text-[10px] md:text-xs bg-background border border-border rounded-full">{source}</span>
+                      <span key={idx} className="px-3 py-1 text-xs bg-secondary/50 border border-border/50 rounded-md">{source}</span>
                     ))}
                     {tool.keywords?.map((keyword, idx) => (
-                      <span key={idx} className="px-2 py-0.5 text-[10px] md:text-xs bg-background border border-border rounded-full">{keyword}</span>
+                      <span key={idx} className="px-3 py-1 text-xs bg-secondary/50 border border-border/50 rounded-md">{keyword}</span>
                     ))}
                     {tool.examples?.map((example, idx) => (
-                      <span key={idx} className="px-2 py-0.5 text-[10px] md:text-xs bg-background border border-border rounded-full">{example}</span>
+                      <span key={idx} className="px-3 py-1 text-xs bg-secondary/50 border border-border/50 rounded-md">{example}</span>
                     ))}
                     {tool.use && (
-                      <span className="px-2 py-0.5 text-[10px] md:text-xs bg-background border border-border rounded-full">{tool.use}</span>
+                      <span className="px-3 py-1 text-xs bg-primary/10 border border-primary/20 text-primary rounded-md">{tool.use}</span>
                     )}
                   </div>
                 </div>
@@ -540,38 +549,44 @@ const baseQuizQuestions = [
 
       case 3:
         return (
-          <div className="space-y-4">
-            <h3 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4">IV. Actualités Récentes</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-6">
+            <h3 className="text-xl md:text-2xl font-semibold mb-6">IV. Actualités Récentes</h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {sections[3].content.news.map((item, index) => (
-                <div key={index} className="bg-muted/50 p-4 rounded-lg border-l-4 border-primary hover:shadow-lg transition-all">
-                  <div className="flex items-start justify-between mb-3">
+                <div key={index} className="bg-card/50 rounded-xl overflow-hidden border border-border/50 hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-md flex flex-col">
+                  <div className="p-5 border-b border-border/30 bg-primary/5 flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <Calendar className="w-4 h-4 text-primary" />
-                      <span className="font-semibold text-sm text-primary">{item.date}</span>
+                      <span className="font-bold text-sm text-primary uppercase tracking-wider">{item.date}</span>
+                    </div>
+                    {item.link && (
+                      <a 
+                        href={item.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="p-1.5 rounded-full bg-background hover:text-primary transition-colors border border-border/50 shadow-xs"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    )}
+                  </div>
+                  
+                  <div className="p-6 space-y-4 flex-1">
+                    <h4 className="text-lg font-bold leading-tight">{item.title}</h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                    
+                    <div className="pt-4 space-y-3">
+                      <div className="p-3 rounded-lg bg-primary/10 border-l-4 border-primary">
+                        <p className="text-xs font-semibold text-primary uppercase mb-1 tracking-tighter">Impact</p>
+                        <p className="text-sm font-medium">{item.impact}</p>
+                      </div>
+                      
+                      <div className="p-3 rounded-lg bg-blue-500/10 border-l-4 border-blue-500">
+                        <p className="text-xs font-semibold text-blue-500 uppercase mb-1 tracking-tighter">Exemple concret</p>
+                        <p className="text-sm text-muted-foreground leading-snug">{item.example}</p>
+                      </div>
                     </div>
                   </div>
-                  <h4 className="text-base font-semibold mb-2">{item.title}</h4>
-                  <p className="text-sm text-muted-foreground mb-3">{item.description}</p>
-                  <div className="bg-primary/10 p-3 rounded-lg border border-primary/20 mb-3">
-                    <p className="text-xs"><strong className="text-primary">Impact :</strong> {item.impact}</p>
-                  </div>
-                  <div className="bg-blue-50 p-3 rounded-lg border border-blue-200 mb-3">
-                    <p className="text-xs text-blue-800">
-                      <strong className="text-blue-700">Exemple concret :</strong> {item.example}
-                    </p>
-                  </div>
-                  {item.link && (
-                    <a 
-                      href={item.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs text-primary hover:underline"
-                    >
-                      <ExternalLink className="w-3 h-3" />
-                      Source
-                    </a>
-                  )}
                 </div>
               ))}
             </div>

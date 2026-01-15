@@ -3,13 +3,14 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const navItems = [
-  { name: "Home", href: "#hero" },
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Certification", href: "#certifications" },
-  { name: "Experience", href: "#projects" },
+  { name: "Accueil", href: "#hero" },
+  { name: "Infos", href: "#about" },
+  { name: "Aptitudes", href: "#soft-skills" },
+  { name: "Compétences", href: "#skills" },
+  { name: "Certifs", href: "#certifications" },
+  { name: "Expérience", href: "#projects" },
   { name: "Projets", href: "#showcase" },
-  { name: "VeilleTech", href: "#veille-tech" },
+  { name: "Veille", href: "#veille-tech" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -74,7 +75,7 @@ export const Navbar = () => {
         <button
           onClick={() => setIsMenuOpen((prev) => !prev)}
           className="md:hidden p-2 text-foreground relative z-50 hover:bg-primary/10 rounded-lg transition-colors"
-          aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+          aria-label={isMenuOpen ? "Fermer" : "Menu"}
           aria-expanded={isMenuOpen}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}

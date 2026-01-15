@@ -10,9 +10,6 @@ const certifications = [
     tags: ["AWS", "Cloud", "Foundations"],
     credentialUrl: "https://www.credly.com/badges/6ba622dd-bf7d-48a7-bebd-f3135c81cf9f/public_url",
     date: "2024",
-    references: [
-      { label: "My Lessons", url: "https://drive.google.com/drive/folders/1n0RoEW8-AT5vO9MD_xBDZQpScc-yiOJx?usp=sharing" }
-    ],
   },
   {
     id: 2,
@@ -77,7 +74,7 @@ export const CertificationSection = () => {
                       href={cert.credentialUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      title="View credential"
+                      title="Voir le certificat"
                       className="text-foreground/80 hover:text-primary transition-colors duration-300 p-1"
                     >
                       <ExternalLink size={20} />

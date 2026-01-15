@@ -141,7 +141,7 @@ export const ShowcaseSection = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-foreground/80 hover:text-primary transition-colors duration-300 flex items-center gap-1"
-                          title="View Code on GitHub"
+                          title="Voir le code"
                         >
                           <Github size={20} />
                         </a>
@@ -152,7 +152,7 @@ export const ShowcaseSection = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-foreground/80 hover:text-primary transition-colors duration-300 flex items-center gap-1"
-                          title="View Live Demo"
+                          title="Voir la démo"
                         >
                           <ExternalLink size={20} />
                         </a>
@@ -170,13 +170,13 @@ export const ShowcaseSection = () => {
             target="_blank"
             href="https://github.com/SBS-santhosh"
           >
-            Check My Github <ArrowRight size={16} />
+            Voir mon Github <ArrowRight size={16} />
           </a>
 
           <a
             className="cosmic-button w-fit flex items-center gap-2"
-            href="/files/Annexe-6-1-Tableau-Synthese-Epreuve-E4-BTS-SIO-2022.xlsx"
-            download="Tableau-Synthese-Epreuve-E4-BTS-SIO-2022.xlsx"
+            href="/files/Tableau-Synthese-Epreuve-BTS-SIO.pdf"
+            download="Tableau-Synthese-Epreuve-BTS-SIO.pdf"
           >
             Tableau Synthèse <Download size={16} />
           </a>
