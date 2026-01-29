@@ -7,7 +7,7 @@ const navItems = [
   { name: "Infos", href: "#about" },
   { name: "Aptitudes", href: "#soft-skills" },
   { name: "Compétences", href: "#skills" },
-  { name: "Certifs", href: "#certifications" },
+  { name: "Certifications", href: "#certifications" },
   { name: "Expérience", href: "#projects" },
   { name: "Projets", href: "#showcase" },
   { name: "Veille", href: "#veille-tech" },
