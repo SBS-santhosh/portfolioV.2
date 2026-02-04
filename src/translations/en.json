@@ -1,0 +1,113 @@
+{
+    "nav": {
+        "home": "Home",
+        "info": "Info",
+        "skills": "Skills",
+        "softSkills": "Skills",
+        "certifications": "Certifications",
+        "experience": "Experience",
+        "projects": "Projects",
+        "watch": "Tech",
+        "contact": "Contact"
+    },
+    "hero": {
+        "greeting": "Hello, I am",
+        "description": "BTS SIO – SLAM student, passionate about software development. I create modern web solutions with Python, JavaScript and frameworks like React and Node.js. Currently looking for an internship from December 1st, 2025 to January 25th, 2026.",
+        "cta": "See my projects",
+        "scroll": "Scroll"
+    },
+    "about": {
+        "title": "About",
+        "me": "me",
+        "subtitle": "Passionate student developer & Tech enthusiast",
+        "description1": "I am Satheeskumar Santhosh, a BTS SIO SLAM student based in Argenteuil, France. I am passionate about software development and am currently looking for an internship from December 1st, 2025 to January 25th, 2026.",
+        "description2": "Motivated, rigorous and eager to learn, I like working on concrete projects involving web development, networking and cybersecurity. I strive to continuously improve my technical and creative skills through personal projects and technology watching.",
+        "contact": "Contact Me",
+        "cv": "Download CV",
+        "dev_title": "Development",
+        "dev_desc": "Skills in Python, Java, JavaScript and React to create interactive and high-performance web and desktop applications.",
+        "tech_title": "Technical Skills",
+        "tech_desc": "Experience with networks, virtualization and security tools such as VirtualBox, Nmap and Metasploit.",
+        "exp_title": "Experience",
+        "exp_desc": "Practical internships in IT support, system and network configuration in companies such as XEFI and Tek Wave."
+    },
+    "softSkills": {
+        "title": "My",
+        "subtitle": "Skills",
+        "skills": [
+            {
+                "name": "Versatility & Adaptability",
+                "description": "Ability to quickly adapt to new environments and juggle different technical and organizational tasks."
+            },
+            {
+                "name": "Technical Communication & Documentation",
+                "description": "Ability to explain complex concepts and produce clear and structured documentation for projects."
+            },
+            {
+                "name": "Customer Service & Listening",
+                "description": "Commitment to understanding user needs and providing appropriate solutions with empathy and professionalism."
+            },
+            {
+                "name": "Curiosity & Continuous Learning",
+                "description": "Active technology watch and constant desire to explore new technologies to stay at the leading edge."
+            },
+            {
+                "name": "Intercultural Communication",
+                "description": "Ability to evolve and collaborate effectively in diverse and multicultural environments."
+            },
+            {
+                "name": "Rigor & Precision",
+                "description": "Attention to detail and commitment to excellence in code, testing and final project delivery."
+            }
+        ]
+    },
+    "footer": {
+        "rights": "All rights reserved."
+    },
+    "skills": {
+        "title": "My",
+        "subtitle": "Technical Skills",
+        "categories": {
+            "all": "All Skills",
+            "langages": "Languages",
+            "databases": "Databases",
+            "frameworks": "Frameworks & Libraries",
+            "tools": "Tools & Systems",
+            "network": "Network & Virtualization",
+            "security": "Security / Pentest"
+        }
+    },
+    "projects": {
+        "title": "Professional",
+        "subtitle": "Experience",
+        "viewReport": "View report",
+        "items": {
+            "1": {
+                "title": "Arimayi Internship Report",
+                "description": "Internship report from December 1st, 2025 to January 23rd, 2026 at Arimayi."
+            },
+            "2": {
+                "title": "XEFI Sannois Internship Report",
+                "description": "Internship report from May 26th to July 25th, 2025 at XEFI Sannois."
+            },
+            "3": {
+                "title": "Tekwave Internship Report",
+                "description": "Internship report from January 15th to February 9th, 2024 at Tekwave, Bondy."
+            },
+            "4": {
+                "title": "GK Internship Report",
+                "description": "Internship report from November 21st to December 16th, 2022 at GK Multiservice, Bobigny."
+            }
+        }
+    },
+    "notFound": {
+        "title": "Page Not Found",
+        "back": "Return to Home"
+    },
+    "showcase": {
+        "93moove": {
+            "title": "93Moove",
+            "description": "A web application dedicated to the management and promotion of sports, manual and cultural activities for the 93Moove association in Saint-Ouen. Includes session management, an admin space and secure authentication."
+        }
+    }
+}

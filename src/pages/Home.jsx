@@ -11,10 +11,14 @@ import { Footer } from "../components/Footer";
 import { CertificationSection } from "../components/CertificationSection";
 import { VeilleTechSection } from "../components/VeilleTechSection";
 import { ShowcaseSection } from "../components/ShowcaseSection";
+import { LanguageSwitcher } from "../components/LanguageSwitcher";
 
 export const Home = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      {/* Language Toggle */}
+      <LanguageSwitcher />
+      
       {/* Theme Toggle */}
       <ThemeToggle />
       {/* Background Effects */}

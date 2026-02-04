@@ -1,20 +1,22 @@
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 const navItems = [
-  { name: "Accueil", href: "#hero" },
-  { name: "Infos", href: "#about" },
-  { name: "Aptitudes", href: "#soft-skills" },
-  { name: "Compétences", href: "#skills" },
-  { name: "Certifications", href: "#certifications" },
-  { name: "Expérience", href: "#projects" },
-  { name: "Projets", href: "#showcase" },
-  { name: "Veille", href: "#veille-tech" },
-  { name: "Contact", href: "#contact" },
+  { name: "nav.home", href: "#hero" },
+  { name: "nav.info", href: "#about" },
+  { name: "nav.softSkills", href: "#soft-skills" },
+  { name: "nav.skills", href: "#skills" },
+  { name: "nav.certifications", href: "#certifications" },
+  { name: "nav.experience", href: "#projects" },
+  { name: "nav.projects", href: "#showcase" },
+  { name: "nav.watch", href: "#veille-tech" },
+  { name: "nav.contact", href: "#contact" },
 ];
 
 export const Navbar = () => {
+  const { t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -67,7 +69,7 @@ export const Navbar = () => {
               href={item.href}
               className="text-foreground hover:text-primary transition-all duration-300 text-lg font-medium hover:scale-105"
             >
-              {item.name}
+              {t(item.name)}
             </a>
           ))}
         </div>
@@ -75,7 +77,7 @@ export const Navbar = () => {
         <button
           onClick={() => setIsMenuOpen((prev) => !prev)}
           className="md:hidden p-2 text-foreground relative z-50 hover:bg-primary/10 rounded-lg transition-colors"
-          aria-label={isMenuOpen ? "Fermer" : "Menu"}
+          aria-label={isMenuOpen ? t("nav.close") : t("nav.menu")}
           aria-expanded={isMenuOpen}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -105,7 +107,7 @@ export const Navbar = () => {
                 className="text-foreground hover:text-primary transition-colors duration-300 text-lg py-2 border-b border-foreground/10 hover:border-primary/50 font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {item.name}
+                {t(item.name)}
               </a>
             ))}
           </div>

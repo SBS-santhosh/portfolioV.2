@@ -1,6 +1,7 @@
 import { ArrowRight, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "../context/LanguageContext";
 
 const projects = [
   {
@@ -48,6 +49,8 @@ const projects = [
 ];
 
 export const ProjectsSection = () => {
+  const { t } = useLanguage();
+  const projectTranslations = t("projects.items");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
 
@@ -82,7 +85,7 @@ export const ProjectsSection = () => {
     <section id="projects" className="py-24 px-4 relative overflow-hidden">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          Expérience <span className="text-primary">professionnelle</span>
+          {t("projects.title")} <span className="text-primary">{t("projects.subtitle")}</span>
         </h2>
 
         <div className="relative h-[420px] md:h-[380px] flex items-center justify-center">
@@ -130,9 +133,15 @@ export const ProjectsSection = () => {
                         </span>
                       ))}
                     </div>
-                    <h3 className="text-xl font-bold mb-3">{projects[currentIndex].title}</h3>
+                    <h3 className="text-xl font-bold mb-3">
+                      {projectTranslations && projectTranslations[projects[currentIndex].id] 
+                        ? projectTranslations[projects[currentIndex].id].title 
+                        : projects[currentIndex].title}
+                    </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                      {projects[currentIndex].description}
+                      {projectTranslations && projectTranslations[projects[currentIndex].id] 
+                        ? projectTranslations[projects[currentIndex].id].description 
+                        : projects[currentIndex].description}
                     </p>
                   </div>
                   
@@ -143,7 +152,7 @@ export const ProjectsSection = () => {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-primary hover:underline text-sm font-medium transition-all group"
                     >
-                      Voir le rapport <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" />
+                      {t("projects.viewReport")} <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" />
                     </a>
                   </div>
                 </div>

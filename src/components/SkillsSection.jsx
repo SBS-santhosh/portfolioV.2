@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "../context/LanguageContext";
 
 const skills = [
   // 🔹 Langages
@@ -63,6 +64,7 @@ const categories = [
 ];
 
 export const SkillsSection = () => {
+  const { t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState("all");
 
   const filteredSkills = skills.filter(
@@ -73,7 +75,7 @@ export const SkillsSection = () => {
     <section id="skills" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          Mes <span className="text-primary">Compétences Techniques</span>
+          {t("skills.title")} <span className="text-primary">{t("skills.subtitle")}</span>
         </h2>
 
         {/* 🔘 Category filter buttons */}
@@ -89,7 +91,7 @@ export const SkillsSection = () => {
                   : "bg-secondary/70 text-foreground hover:bg-secondary"
               )}
             >
-              {category.label}
+              {t(`skills.categories.${category.id}`)}
             </button>
           ))}
         </div>

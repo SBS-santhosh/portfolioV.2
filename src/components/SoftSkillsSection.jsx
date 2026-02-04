@@ -1,4 +1,5 @@
 import { Zap, FileText, Headset, Search, Globe, CheckCircle } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 const softSkills = [
   {
@@ -34,11 +35,14 @@ const softSkills = [
 ];
 
 export const SoftSkillsSection = () => {
+  const { t } = useLanguage();
+  const skills = t("softSkills.skills");
+
   return (
     <section id="soft-skills" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          Mes <span className="text-primary">Soft Skills</span>
+          {t("softSkills.title")} <span className="text-primary">{t("softSkills.subtitle")}</span>
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -50,9 +54,11 @@ export const SoftSkillsSection = () => {
               <div className="p-4 rounded-full bg-primary/10 mb-2">
                 {skill.icon}
               </div>
-              <h3 className="text-xl font-semibold">{skill.name}</h3>
+              <h3 className="text-xl font-semibold">
+                {skills && skills[index] ? skills[index].name : skill.name}
+              </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                {skill.description}
+                {skills && skills[index] ? skills[index].description : skill.description}
               </p>
             </div>
           ))}

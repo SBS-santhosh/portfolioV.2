@@ -1,0 +1,113 @@
+{
+    "nav": {
+        "home": "Accueil",
+        "info": "Infos",
+        "skills": "Compétences",
+        "softSkills": "Aptitudes",
+        "certifications": "Certifications",
+        "experience": "Expérience",
+        "projects": "Projets",
+        "watch": "Veille",
+        "contact": "Contact"
+    },
+    "hero": {
+        "greeting": "Bonjour, je suis",
+        "description": "Étudiant en BTS SIO – SLAM, passionné par le développement logiciel. Je crée des solutions web modernes avec Python, JavaScript et des frameworks comme React et Node.js. Actuellement à la recherche d'un stage du 1er décembre 2025 au 25 janvier 2026.",
+        "cta": "Voir mes projets",
+        "scroll": "Défiler"
+    },
+    "about": {
+        "title": "À propos de",
+        "me": "moi",
+        "subtitle": "Étudiant développeur passionné & Enthousiaste de la tech",
+        "description1": "Je suis Satheeskumar Santhosh, étudiant en BTS SIO SLAM basé à Argenteuil, France. Je suis passionné par le développement logiciel et je recherche actuellement un stage du 1er décembre 2025 au 25 janvier 2026.",
+        "description2": "Motivé, rigoureux et avide d'apprendre, j'aime travailler sur des projets concrets impliquant le développement web, le réseau et la cybersécurité. Je m'efforce d'améliorer continuellement mes compétences techniques et créatives à travers des projets personnels et de la veille technologique.",
+        "contact": "Me Contacter",
+        "cv": "Télécharger le CV",
+        "dev_title": "Développement",
+        "dev_desc": "Compétences en Python, Java, JavaScript et React pour créer des applications web et desktop interactives et performantes.",
+        "tech_title": "Compétences Techniques",
+        "tech_desc": "Expérience avec les réseaux, la virtualisation et les outils de sécurité tels que VirtualBox, Nmap et Metasploit.",
+        "exp_title": "Expérience",
+        "exp_desc": "Stages pratiques en support informatique, configuration de systèmes et réseaux dans des entreprises telles que XEFI et Tek Wave."
+    },
+    "softSkills": {
+        "title": "Mes",
+        "subtitle": "Soft Skills",
+        "skills": [
+            {
+                "name": "Polyvalence & Adaptabilité",
+                "description": "Capacité à s'adapter rapidement à de nouveaux environnements et à jongler entre différentes tâches techniques et organisationnelles."
+            },
+            {
+                "name": "Communication Technique & Documentation",
+                "description": "Aptitude à expliquer des concepts complexes et à produire une documentation claire et structurée pour les projets."
+            },
+            {
+                "name": "Sens du Service Client & Écoute",
+                "description": "Engagement à comprendre les besoins des utilisateurs et à fournir des solutions adaptées avec empathie et professionnalisme."
+            },
+            {
+                "name": "Curiosité & Apprentissage Continu",
+                "description": "Veille technologique active et volonté constante d'explorer de nouvelles technologies pour rester à la pointe."
+            },
+            {
+                "name": "Communication Interculturelle",
+                "description": "Capacité à évoluer et à collaborer efficacement dans des environnements diversifiés et multiculturels."
+            },
+            {
+                "name": "Rigueur & Précision",
+                "description": "Souci du détail et engagement envers l'excellence dans le code, les tests et le rendu final des projets."
+            }
+        ]
+    },
+    "footer": {
+        "rights": "Tous droits réservés."
+    },
+    "skills": {
+        "title": "Mes",
+        "subtitle": "Compétences Techniques",
+        "categories": {
+            "all": "Toutes les compétences",
+            "langages": "Langages",
+            "databases": "Bases de données",
+            "frameworks": "Frameworks & Librairies",
+            "tools": "Outils & Systèmes",
+            "network": "Réseau & Virtualisation",
+            "security": "Sécurité / Pentest"
+        }
+    },
+    "projects": {
+        "title": "Expérience",
+        "subtitle": "professionnelle",
+        "viewReport": "Voir le rapport",
+        "items": {
+            "1": {
+                "title": "Rapport de stage Arimayi",
+                "description": "Rapport de stage effectué du Du 1er Décembre 2025 au 23 janvier 2026 chez Arimayi."
+            },
+            "2": {
+                "title": "Rapport de stage XEFI Sannois",
+                "description": "Rapport de stage effectué du 26 mai au 25 juillet 2025 chez XEFI Sannois."
+            },
+            "3": {
+                "title": "Rapport de stage Tekwave",
+                "description": "Rapport de stage effectué du 15 janvier au 9 février 2024 chez Tekwave, Bondy."
+            },
+            "4": {
+                "title": "Rapport de stage GK",
+                "description": "Rapport de stage effectué du 21 novembre au 16 décembre 2022 chez GK Multiservice, Bobigny."
+            }
+        }
+    },
+    "notFound": {
+        "title": "Page Non Trouvée",
+        "back": "Retour à l'accueil"
+    },
+    "showcase": {
+        "93moove": {
+            "title": "93Moove",
+            "description": "Une application web dédiée à la gestion et à la promotion d'activités sportives, manuelles et culturelles pour l'association 93Moove à Saint-Ouen. Inclut la gestion des sessions, un espace admin et une authentification sécurisée."
+        }
+    }
+}
