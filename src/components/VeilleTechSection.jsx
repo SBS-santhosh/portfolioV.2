@@ -32,7 +32,7 @@ export const VeilleTechSection = () => {
         objective: "Accélérer la transformation numérique",
         targets: ["PME", "Startups", "Services internes", "Étudiants"],
         platforms: {
-          lowCode: ["Mendix", "OutSystems", "Microsoft Power Apps", "Cursor"],
+          lowCode: ["Mendix", "OutSystems", "Microsoft Power Apps", "Node-RED"],
           noCode: ["Bubble", "Glide", "Notion", "Webflow", "Make"]
         },
         advantages: ["Rapidité de développement", "Accessibilité", "Réduction des coûts"],
