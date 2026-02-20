@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
-import { ExternalLink, ArrowRight, Github, Download, ChevronLeft, ChevronRight } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { ExternalLink, ArrowRight, Github, Download } from "lucide-react";
 
 const personalProjects = [
   {
@@ -74,46 +73,10 @@ const professionalProjects = [
 export const ShowcaseSection = () => {
   const [activeTab, setActiveTab] = useState("professionnel");
   const projects = activeTab === "personnel" ? personalProjects : professionalProjects;
-  
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
-
-  // Reset index when tab changes
-  useEffect(() => {
-    setCurrentIndex(0);
-    setDirection(0);
-  }, [activeTab]);
-
-  const slideVariants = {
-    enter: (direction) => ({
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0
-    }),
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1
-    },
-    exit: (direction) => ({
-      zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 0
-    })
-  };
-
-  const swipeConfidenceThreshold = 10000;
-  const swipePower = (offset, velocity) => {
-    return Math.abs(offset) * velocity;
-  };
-
-  const paginate = (newDirection) => {
-    setDirection(newDirection);
-    setCurrentIndex((prevIndex) => (prevIndex + newDirection + projects.length) % projects.length);
-  };
 
   return (
     <section id="showcase" className="py-24 px-4 relative overflow-hidden">
-      <div className="container mx-auto max-w-5xl">
+      <div className="container mx-auto max-w-7xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
           Projets <span className="text-primary">Professionnels & Personnels</span>
         </h2>
@@ -144,125 +107,67 @@ export const ShowcaseSection = () => {
           </div>
         </div>
 
-        {/* Project Slider */}
-        <div className="relative h-[500px] flex items-center justify-center">
-          <AnimatePresence initial={false} custom={direction}>
-            <motion.div
-              key={`${activeTab}-${currentIndex}`}
-              custom={direction}
-              variants={slideVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.2 }
-              }}
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={1}
-              onDragEnd={(e, { offset, velocity }) => {
-                const swipe = swipePower(offset.x, velocity.x);
+        {/* Project Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 min-h-[400px]">
+          {projects.map((project) => (
+            <div key={project.id} className="bg-card rounded-xl overflow-hidden shadow-lg border border-primary/10 flex flex-col h-full card-hover">
+              <div className="h-40 overflow-hidden bg-white/5 flex items-center justify-center p-4">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-contain"
+                />
+              </div>
 
-                if (swipe < -swipeConfidenceThreshold) {
-                  paginate(1);
-                } else if (swipe > swipePower) {
-                  paginate(-1);
-                }
-              }}
-              className="absolute w-full max-w-md"
-            >
-              <div className="group bg-card rounded-lg overflow-hidden shadow-xs border border-primary/10">
-                <div className="h-48 overflow-hidden">
-                  <img
-                    src={projects[currentIndex].image}
-                    alt={projects[currentIndex].title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-
-                <div className="p-6">
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {projects[currentIndex].tags.map((tag) => (
+              <div className="p-6 flex flex-col justify-between flex-grow">
+                <div>
+                  <div className="flex flex-wrap gap-1.5 mb-3">
+                    {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground"
+                        className="px-2 py-0.5 text-[10px] font-medium border rounded-full bg-primary/5 text-primary border-primary/20"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  <h3 className="text-xl font-semibold mb-1">
-                    {projects[currentIndex].title}
+                  <h3 className="text-base font-bold mb-2 leading-tight">
+                    {project.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm mb-4">
-                    {projects[currentIndex].description}
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                    {project.description}
                   </p>
-                  
-                  <div className="flex justify-between items-center">
-                    <div className="flex space-x-3">
-                      {projects[currentIndex].githubUrl && (
-                        <a
-                          href={projects[currentIndex].githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-foreground/80 hover:text-primary transition-colors duration-300 flex items-center gap-1"
-                          title="Voir le code"
-                        >
-                          <Github size={20} />
-                        </a>
-                      )}
-                      {projects[currentIndex].demoUrl && (
-                        <a
-                          href={projects[currentIndex].demoUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-foreground/80 hover:text-primary transition-colors duration-300 flex items-center gap-1"
-                          title="Voir la démo"
-                        >
-                          <ExternalLink size={20} />
-                        </a>
-                      )}
-                    </div>
+                </div>
+                
+                <div className="flex justify-between items-center mt-auto">
+                  <div className="flex space-x-3">
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-foreground/80 hover:text-primary transition-colors duration-300 flex items-center gap-1"
+                        title="Voir le code"
+                      >
+                        <Github size={18} />
+                      </a>
+                    )}
+                    {project.demoUrl && (
+                      <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-foreground/80 hover:text-primary transition-colors duration-300 flex items-center gap-1"
+                        title="Voir la démo"
+                      >
+                        <ExternalLink size={18} />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Navigation Controls */}
-          {projects.length > 1 && (
-            <>
-              <button
-                className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-background/80 backdrop-blur-sm border border-primary/20 text-primary hover:bg-primary hover:text-primary-foreground transition-all shadow-lg"
-                onClick={() => paginate(-1)}
-              >
-                <ChevronLeft size={24} />
-              </button>
-              <button
-                className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-background/80 backdrop-blur-sm border border-primary/20 text-primary hover:bg-primary hover:text-primary-foreground transition-all shadow-lg"
-                onClick={() => paginate(1)}
-              >
-                <ChevronRight size={24} />
-              </button>
-            </>
-          )}
-        </div>
-
-        {/* Dots Indicator */}
-        <div className="flex justify-center gap-3 mt-8">
-          {projects.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => {
-                setDirection(index > currentIndex ? 1 : -1);
-                setCurrentIndex(index);
-              }}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentIndex ? "bg-primary w-8" : "bg-primary/20"
-              }`}
-            />
+            </div>
           ))}
         </div>
         

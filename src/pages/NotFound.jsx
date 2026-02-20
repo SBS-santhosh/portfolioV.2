@@ -17,7 +17,7 @@ export const NotFound = () => {
              />
         </div>
         
-        <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-500">
+        <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-500">
           {t("notFound.title")}
         </h1>
 

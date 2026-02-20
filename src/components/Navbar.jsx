@@ -47,19 +47,17 @@ export const Navbar = () => {
   return (
     <nav
       className={cn(
-        "fixed w-full z-40 transition-all duration-300 py-4",
+        "fixed w-full z-40 transition-all duration-300 py-6",
         "bg-background shadow-lg border-b border-primary/20"
       )}
     >
-      <div className="container max-w-3xl mx-auto flex items-center justify-between px-4">
+      <div className="container max-w-4xl mx-auto flex items-center justify-between px-8">
         <a
           className="text-xl font-bold text-primary flex items-center relative z-50"
           href="#hero"
           onClick={() => setIsMenuOpen(false)}
         >
-          <span className="relative z-10 bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">
-            <span className="font-extrabold">ToTech</span> Portfolio
-          </span>
+          {/* Logo removed as per user request */}
         </a>
 
         <div className="hidden md:flex space-x-8">

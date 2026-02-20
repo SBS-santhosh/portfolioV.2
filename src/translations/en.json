@@ -2,8 +2,8 @@
     "nav": {
         "home": "Home",
         "info": "Info",
-        "skills": "Skills",
-        "softSkills": "Skills",
+        "skills": "SoftSkills",
+        "softSkills": "TechSkills",
         "certifications": "Certifications",
         "experience": "Experience",
         "projects": "Projects",
@@ -12,7 +12,7 @@
     },
     "hero": {
         "greeting": "Hello, I am",
-        "description": "BTS SIO – SLAM student, passionate about software development. I create modern web solutions with Python, JavaScript and frameworks like React and Node.js. Currently looking for an internship from December 1st, 2025 to January 25th, 2026.",
+        "description": "BTS SIO – SLAM student, passionate about software development. I create modern web solutions with Python, JavaScript and frameworks like React and Node.js. I am currently looking for a work-study program for my continued studies.",
         "cta": "See my projects",
         "scroll": "Scroll"
     },
@@ -20,7 +20,7 @@
         "title": "About",
         "me": "me",
         "subtitle": "Passionate student developer & Tech enthusiast",
-        "description1": "I am Satheeskumar Santhosh, a BTS SIO SLAM student based in Argenteuil, France. I am passionate about software development and am currently looking for an internship from December 1st, 2025 to January 25th, 2026.",
+        "description1": "I am Satheeskumar Santhosh, a BTS SIO SLAM student based in Argenteuil, France. I am passionate about software development and I am currently looking for a work-study program for my continued studies.",
         "description2": "Motivated, rigorous and eager to learn, I like working on concrete projects involving web development, networking and cybersecurity. I strive to continuously improve my technical and creative skills through personal projects and technology watching.",
         "contact": "Contact Me",
         "cv": "Download CV",
