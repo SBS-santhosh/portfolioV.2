@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Calendar, BookOpen, Award, ChevronRight, ExternalLink, Code, Zap, Users, CheckCircle, Lightbulb, Layers, Search, X, Trophy, Check, AlertTriangle } from "lucide-react";
+import { Calendar, BookOpen, Award, ChevronRight, ExternalLink, Code, Zap, Users, CheckCircle, Lightbulb, Layers, Search, X, Trophy, Check, AlertTriangle, Sparkles, ShieldCheck, TrendingUp } from "lucide-react";
 
 export const VeilleTechSection = () => {
   const [activeSection, setActiveSection] = useState(0);
@@ -17,10 +17,12 @@ export const VeilleTechSection = () => {
       content: {
         theme: "Low Code / No Code",
         definition: {
-          lowCode: "Développer avec des blocs de code visuels",
-          noCode: "Créer des applications sans écrire de code"
+          lowCode: "Développement d'applications à l'aide d'interfaces visuelles, de composants préconfigurés et, si nécessaire, de code complémentaire",
+          noCode: "Création d'applications ou d'automatisations sans écrire de code, grâce à des interfaces visuelles",
+          ai: "Développement assisté par IA : décrire un besoin en langage naturel pour générer une première version d'application"
         },
-        reason: "Démocratise la création d'applications, accélère le développement, et intéresse de plus en plus les entreprises"
+        reason: "Démocratise la création d'applications, accélère la transformation numérique, aide les entreprises à répondre plus vite aux besoins, et permet aux équipes métier de participer au développement",
+        note: "Le Low Code / No Code ne remplace pas totalement les développeurs : ils restent indispensables pour l'architecture, la sécurité, l'intégration des systèmes, la qualité et la maintenance."
       }
     },
     {
@@ -29,14 +31,15 @@ export const VeilleTechSection = () => {
       icon: Layers,
       duration: "2 min",
       content: {
-        objective: "Accélérer la transformation numérique",
-        targets: ["PME", "Startups", "Services internes", "Étudiants"],
+        objective: "Accélérer la transformation numérique en permettant de développer rapidement des applications, sites web, formulaires, tableaux de bord et automatisations",
+        targets: ["PME & Startups", "Services internes", "Équipes marketing/commerciales", "Développeurs professionnels", "Étudiants & reconversion", "Administrations"],
         platforms: {
-          lowCode: ["Mendix", "OutSystems", "Microsoft Power Apps", "Node-RED"],
-          noCode: ["Bubble", "Glide", "Notion", "Webflow", "Make"]
+          lowCode: ["Microsoft Power Apps", "Mendix", "OutSystems", "Appian", "ServiceNow App Engine", "Node-RED", "Google AppSheet"],
+          noCode: ["Bubble", "Glide", "Webflow", "Make", "Notion", "Airtable", "Zapier"]
         },
-        advantages: ["Rapidité de développement", "Accessibilité", "Réduction des coûts"],
-        limits: ["Moins de flexibilité", "Sécurité et maintenance complexes"]
+        advantages: ["Développement plus rapide", "Accessibilité pour les profils non techniques", "Automatisation des tâches répétitives", "Meilleure collaboration métier / IT"],
+        limits: ["Personnalisation parfois limitée", "Dépendance à l'éditeur (lock-in)", "Sécurité et conformité à surveiller", "Shadow IT : applications non contrôlées par l'IT"],
+        highlight: "Bubble évolue vers un modèle hybride : sa plateforme reste visuelle, mais propose désormais des fonctions d'IA capables de générer et modifier des applications. La gouvernance (droits, données, sécurité) devient un enjeu essentiel."
       }
     },
     {
@@ -49,22 +52,22 @@ export const VeilleTechSection = () => {
           {
             name: "Flux RSS",
             tool: "Feedly",
-            sources: ["TechCrunch", "Journal du Net", "Maddyness", "ZDNet"]
+            sources: ["TechCrunch", "Journal du Net", "Maddyness", "ZDNET", "Blogs Microsoft / Google / Bubble / Make"]
           },
           {
             name: "Alertes IA",
             tool: "Google Alerts",
-            keywords: ["Low Code", "No Code", "Bubble", "Power Apps 2025"]
+            keywords: ["Low Code 2026", "No Code 2026", "AI app builder", "Power Apps Copilot", "AppSheet Gemini", "Bubble AI Agent", "Make AI Agents", "gouvernance Low Code"]
           },
           {
             name: "IA Résumés",
             tool: "Perplexity / ChatGPT",
-            use: "Résumer les tendances récentes"
+            use: "Résumer les actualités Low Code/No Code depuis déc. 2025 (dates, sources, impacts)"
           },
           {
             name: "Newsletters",
             tool: "N/A",
-            examples: ["NoCode.tech Weekly", "Product Hunt", "Makerpad Updates"]
+            examples: ["NoCode.tech Weekly", "Product Hunt", "Blog Bubble", "Blog Make", "Microsoft Power Platform Blog", "Google Workspace Updates"]
           }
         ]
       }
@@ -77,36 +80,62 @@ export const VeilleTechSection = () => {
       content: {
         news: [
           {
-            date: "Janvier 2024",
-            title: "Microsoft Power Platform intègre Copilot (IA)",
-            description: "Microsoft permet maintenant de créer des applications en langage naturel grâce à Copilot dans Power Apps.",
-            impact: "Révolution de la création d'apps par IA",
-            example: "un utilisateur peut écrire 'Créer une appli de suivi de ventes' et l'IA génère la structure de l'application automatiquement.",
-            link: "https://www.microsoft.com/en-us/dynamics-365/blog/business-leader/2024/01/25/2024-release-wave-1-plans-for-microsoft-dynamics-365-and-power-platform-now-available/"
+            date: "Oct. – Déc. 2025",
+            title: "Bubble accélère avec l'IA (Bubble AI Agent)",
+            description: "Bubble lance un assistant IA capable de comprendre une application, générer des éléments, corriger des workflows et accompagner la construction du projet, avec une extension aux applications mobiles natives.",
+            impact: "La frontière entre No Code et développement assisté par IA devient moins nette",
+            example: "Un entrepreneur demande : « Crée une application mobile de réservation avec espace client et paiement. » Bubble génère une base modifiable et testable.",
+            source: "Bubble Blog",
+            link: "https://bubble.io/blog/bubble-tour-founder-keynote-2025"
           },
           {
-            date: "Avril 2021",
-            title: "Bubble lève 100 millions de dollars",
-            description: "Bubble renforce ses outils IA et sa sécurité grâce à cette levée de fonds.",
-            impact: "Confiance du marché dans le No Code",
-            example: "Bubble peut maintenant améliorer son générateur d'applications sans code pour les startups.",
-            link: "https://www.reuters.com/technology/no-code-startup-bubble-raises-100-mln-in-round-led-by-insight-partners-2021-07-27/"
+            date: "Novembre 2025",
+            title: "Make transforme l'automatisation avec l'IA",
+            description: "Make présente ses AI Agents ainsi que Maia, un assistant permettant de créer des automatisations à partir d'une description en langage naturel.",
+            impact: "L'automatisation devient accessible aux services non techniques",
+            example: "« Quand un formulaire est reçu, analyse-le, classe-le, enregistre-le dans Google Sheets et envoie une réponse personnalisée » — le scénario est proposé automatiquement puis vérifié par l'utilisateur.",
+            source: "Make — Press release",
+            link: "https://www.make.com/en/make-ai-agents-press-release"
           },
           {
-            date: "Juin 2024",
-            title: "Google lance AppSheet AI",
-            description: "Google AppSheet utilise l'IA pour générer automatiquement des workflows.",
-            impact: "Automatisation intelligente des processus",
-            example: "en fournissant un tableau de données, AppSheet crée automatiquement un processus d'approbation et notifications.",
-            link: "https://discuss.google.dev/t/announcing-ai-assisted-app-creation-with-gemini-in-appsheet/153205"
+            date: "Mars – Sept. 2026",
+            title: "Microsoft renforce Power Platform (2026 Release Wave 1)",
+            description: "Le plan combine développement visuel, génération par langage naturel, automatisation, agents IA et intégration avec Microsoft 365, Azure et Dataverse.",
+            impact: "Développeurs et équipes métier collaborent sur une même plateforme, avec un besoin accru de gouvernance",
+            example: "Un service commercial demande une appli de suivi des prospects connectée à Outlook/Teams/Dataverse ; Power Apps génère la structure, l'IT contrôle l'accès et la sécurité.",
+            source: "learn.microsoft.com",
+            link: "https://learn.microsoft.com/power-platform/release-plan/2026wave1/"
           },
           {
-            date: "Septembre 2025",
-            title: "Adoption dans les écoles",
-            description: "Certaines écoles spécialisées intègrent le No Code dans leurs formations.",
-            impact: "Démocratisation de l'enseignement tech",
-            example: "Epitech Digital School propose des bootcamps 'Low Code / No Code' pour ses étudiants.",
-            link: "https://www.epitech.digital/lowcode-nocode-epitech-digital-school/?utm_source=chatgpt.com"
+            date: "Jan. – Août 2026",
+            title: "Le développement par langage naturel progresse",
+            description: "Les plateformes ne proposent plus seulement des blocs visuels : elles génèrent une application, un workflow ou un agent à partir d'un objectif décrit en langage naturel (Maia chez Make, agent IA renforcé chez Bubble).",
+            impact: "Prototypage plus rapide, mais vigilance requise : erreurs de logique, sécurité, gestion des données à vérifier avant mise en production",
+            example: "Passer d'une idée à une première démonstration fonctionnelle en quelques minutes, puis tester avant utilisation réelle.",
+            source: "Make Blog",
+            link: "https://www.make.com/en/blog/natural-language-automation"
+          }
+        ],
+        trends: [
+          {
+            icon: "agent",
+            title: "Des outils No Code vers des agents IA",
+            text: "Le No Code assemblait des composants visuels ; en 2026 les outils créent des agents capables d'exécuter des actions et de répondre en langage naturel."
+          },
+          {
+            icon: "team",
+            title: "Des équipes hybrides (« fusion teams »)",
+            text: "Développeurs, experts métier, designers, responsables sécurité et utilisateurs créateurs travaillent désormais ensemble."
+          },
+          {
+            icon: "governance",
+            title: "La gouvernance devient indispensable",
+            text: "Règles d'utilisation, gestion des droits, validation des applications, protection des données et surveillance des coûts."
+          },
+          {
+            icon: "skill",
+            title: "Low Code ne veut pas dire « sans compétence »",
+            text: "Bases de données, droits d'accès, API, sécurité, tests et limites de l'IA restent à comprendre."
           }
         ]
       }
@@ -125,46 +154,46 @@ export const VeilleTechSection = () => {
     }
   ];
 
-  // Base quiz questions (without randomization)
+  // Base quiz questions (without randomization) — mis à jour 2025-2026
 const baseQuizQuestions = [
   {
     q: "Qu'est-ce que le Low Code ?",
     options: [
-      { id: "B", text: "Créer des applications sans écrire de code", correct: false },
-      { id: "A", text: "Développer avec des blocs de code visuels", correct: true },
-      { id: "C", text: "Un langage de programmation", correct: false },
+      { id: "B", text: "Créer des applications sans aucune programmation", correct: false },
+      { id: "A", text: "Développer des applications avec des interfaces visuelles et peu de code", correct: true },
+      { id: "C", text: "Un nouveau langage de programmation", correct: false },
     ],
   },
   {
     q: "Quel est l'objectif principal du No Code ?",
     options: [
-      { id: "B", text: "Remplacer les développeurs professionnels", correct: false },
-      { id: "C", text: "Créer des logiciels système", correct: false },
-      { id: "A", text: "Permettre à tout le monde de créer des applications", correct: true },
+      { id: "B", text: "Remplacer tous les développeurs professionnels", correct: false },
+      { id: "C", text: "Créer uniquement des logiciels système", correct: false },
+      { id: "A", text: "Permettre à des utilisateurs de créer des applications ou des automatisations sans coder", correct: true },
     ],
   },
   {
-    q: "Quelle plateforme est un outil No Code populaire ?",
+    q: "Quelle plateforme est principalement orientée No Code ?",
     options: [
-      { id: "A", text: "Make.com", correct: true },
+      { id: "A", text: "Make", correct: true },
       { id: "B", text: "OutSystems", correct: false },
-      { id: "C", text: "Power Apps", correct: false },
+      { id: "C", text: "Mendix", correct: false },
     ],
   },
   {
-    q: "Quelle autre plateforme est un outil No Code intéressant ?",
+    q: "Quelle évolution caractérise particulièrement le Low Code / No Code en 2026 ?",
     options: [
-      { id: "A", text: "Cursor.ai", correct: true },
-      { id: "B", text: "Mendix", correct: false },
-      { id: "C", text: "Microsoft Excel", correct: false },
+      { id: "B", text: "La disparition complète des tests", correct: false },
+      { id: "A", text: "La génération d'applications et de workflows par langage naturel et par IA", correct: true },
+      { id: "C", text: "L'obligation d'écrire davantage de code manuellement", correct: false },
     ],
   },
   {
     q: "Quel est un avantage du Low Code / No Code ?",
     options: [
-      { id: "B", text: "Complexité accrue du projet", correct: false },
-      { id: "C", text: "Limite totale de personnalisation", correct: false },
-        { id: "A", text: "Rapidité de développement", correct: true },
+      { id: "B", text: "Une complexité accrue pour tous les projets", correct: false },
+      { id: "C", text: "Une personnalisation toujours illimitée", correct: false },
+      { id: "A", text: "Une réduction du temps de développement et d'automatisation", correct: true },
     ],
   },
 ];
@@ -400,6 +429,16 @@ const baseQuizQuestions = [
     );
   };
 
+  const trendIcon = (key) => {
+    switch (key) {
+      case "agent": return Sparkles;
+      case "team": return Users;
+      case "governance": return ShieldCheck;
+      case "skill": return Layers;
+      default: return TrendingUp;
+    }
+  };
+
   const renderSectionContent = () => {
     switch (activeSection) {
       case 0:
@@ -408,10 +447,10 @@ const baseQuizQuestions = [
             <h3 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4">I. Introduction</h3>
             <div className="bg-primary/10 p-3 md:p-4 rounded-lg border-l-4 border-primary">
               <p className="text-sm md:text-base italic">
-                "J'ai choisi le thème du <strong className="text-primary">{sections[0].content.theme}</strong>, une tendance technologique qui permet de créer des applications sans avoir besoin de coder ou avec très peu de code."
+                "J'ai choisi le thème du <strong className="text-primary">{sections[0].content.theme}</strong>, une évolution technologique qui permet de créer des applications avec très peu de programmation, voire sans écrire directement de code."
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 mt-4 md:mt-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mt-4 md:mt-6">
               <div className="bg-muted/50 p-3 md:p-4 rounded-lg border border-border">
                 <h4 className="font-semibold text-xs md:text-sm mb-2 flex items-center gap-2">
                   <Code className="w-4 h-4 text-primary" />
@@ -427,9 +466,19 @@ const baseQuizQuestions = [
                 <p className="text-xs md:text-sm text-muted-foreground">{sections[0].content.definition.noCode}</p>
               </div>
               <div className="bg-muted/50 p-3 md:p-4 rounded-lg border border-border">
+                <h4 className="font-semibold text-xs md:text-sm mb-2 flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-primary" />
+                  Dév. assisté par IA
+                </h4>
+                <p className="text-xs md:text-sm text-muted-foreground">{sections[0].content.definition.ai}</p>
+              </div>
+              <div className="bg-muted/50 p-3 md:p-4 rounded-lg border border-border">
                 <h4 className="font-semibold text-xs md:text-sm mb-2 text-primary">Pourquoi ?</h4>
                 <p className="text-xs md:text-sm text-muted-foreground">{sections[0].content.reason}</p>
               </div>
+            </div>
+            <div className="bg-orange-50 p-3 md:p-4 rounded-lg border-l-4 border-orange-500 mt-3 md:mt-4">
+              <p className="text-xs md:text-sm text-orange-700">{sections[0].content.note}</p>
             </div>
           </div>
         );
@@ -446,7 +495,7 @@ const baseQuizQuestions = [
               <div className="bg-muted/50 p-3 md:p-4 rounded-lg border border-border">
                 <h4 className="font-semibold text-xs md:text-sm mb-2 flex items-center gap-1">
                   <Users className="w-4 h-4 text-primary" />
-                  Cibles Destiné.
+                  Publics concernés
                 </h4>
                 <div className="flex flex-wrap gap-1">
                   {sections[1].content.targets.map((target, index) => (
@@ -494,7 +543,7 @@ const baseQuizQuestions = [
                 </ul>
               </div>
               <div className="bg-orange-50 p-3 md:p-4 rounded-lg border-l-4 border-orange-500">
-                <h4 className="font-semibold text-xs md:text-sm mb-2 text-orange-700"> Limites</h4>
+                <h4 className="font-semibold text-xs md:text-sm mb-2 text-orange-700"> Limites & risques</h4>
                 <ul className="space-y-1">
                   {sections[1].content.limits.map((limit, index) => (
                     <li key={index} className="flex items-center gap-1 text-[10px] md:text-xs text-orange-700">
@@ -504,6 +553,10 @@ const baseQuizQuestions = [
                   ))}
                 </ul>
               </div>
+            </div>
+
+            <div className="bg-primary/10 p-3 md:p-4 rounded-lg border-l-4 border-primary mt-3 md:mt-4">
+              <p className="text-xs md:text-sm">{sections[1].content.highlight}</p>
             </div>
           </div>
         );
@@ -549,46 +602,76 @@ const baseQuizQuestions = [
 
       case 3:
         return (
-          <div className="space-y-6">
-            <h3 className="text-xl md:text-2xl font-semibold mb-6">IV. Actualités Récentes</h3>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {sections[3].content.news.map((item, index) => (
-                <div key={index} className="bg-card/50 rounded-xl overflow-hidden border border-border/50 hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-md flex flex-col">
-                  <div className="p-5 border-b border-border/30 bg-primary/5 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4 text-primary" />
-                      <span className="font-bold text-sm text-primary uppercase tracking-wider">{item.date}</span>
+          <div className="space-y-10">
+            <div className="space-y-6">
+              <h3 className="text-xl md:text-2xl font-semibold mb-6">IV. Actualités 2025–2026</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {sections[3].content.news.map((item, index) => (
+                  <div key={index} className="bg-card/50 rounded-xl overflow-hidden border border-border/50 hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-md flex flex-col">
+                    <div className="p-5 border-b border-border/30 bg-primary/5 flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <Calendar className="w-4 h-4 text-primary" />
+                        <span className="font-bold text-sm text-primary uppercase tracking-wider">{item.date}</span>
+                      </div>
+                      {item.link && (
+                        <a 
+                          href={item.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="p-1.5 rounded-full bg-background hover:text-primary transition-colors border border-border/50 shadow-xs"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      )}
                     </div>
-                    {item.link && (
-                      <a 
-                        href={item.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="p-1.5 rounded-full bg-background hover:text-primary transition-colors border border-border/50 shadow-xs"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    )}
-                  </div>
-                  
-                  <div className="p-6 space-y-4 flex-1">
-                    <h4 className="text-lg font-bold leading-tight">{item.title}</h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
                     
-                    <div className="pt-4 space-y-3">
-                      <div className="p-3 rounded-lg bg-primary/10 border-l-4 border-primary">
-                        <p className="text-xs font-semibold text-primary uppercase mb-1 tracking-tighter">Impact</p>
-                        <p className="text-sm font-medium">{item.impact}</p>
-                      </div>
+                    <div className="p-6 space-y-4 flex-1">
+                      <h4 className="text-lg font-bold leading-tight">{item.title}</h4>
+                      {item.source && (
+                        <p className="text-xs text-muted-foreground -mt-2">Source : {item.link ? (
+                          <a href={item.link} target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">{item.source}</a>
+                        ) : item.source}</p>
+                      )}
+                      <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
                       
-                      <div className="p-3 rounded-lg bg-blue-500/10 border-l-4 border-blue-500">
-                        <p className="text-xs font-semibold text-blue-500 uppercase mb-1 tracking-tighter">Exemple concret</p>
-                        <p className="text-sm text-muted-foreground leading-snug">{item.example}</p>
+                      <div className="pt-4 space-y-3">
+                        <div className="p-3 rounded-lg bg-primary/10 border-l-4 border-primary">
+                          <p className="text-xs font-semibold text-primary uppercase mb-1 tracking-tighter">Impact</p>
+                          <p className="text-sm font-medium">{item.impact}</p>
+                        </div>
+                        
+                        <div className="p-3 rounded-lg bg-blue-500/10 border-l-4 border-blue-500">
+                          <p className="text-xs font-semibold text-blue-500 uppercase mb-1 tracking-tighter">Exemple concret</p>
+                          <p className="text-sm text-muted-foreground leading-snug">{item.example}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <h4 className="text-lg md:text-xl font-semibold flex items-center gap-2">
+                <TrendingUp className="w-5 h-5 text-primary" />
+                Tendances principales en 2026
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {sections[3].content.trends.map((trend, index) => {
+                  const TrendIcon = trendIcon(trend.icon);
+                  return (
+                    <div key={index} className="bg-muted/50 p-4 rounded-lg border border-border flex gap-3">
+                      <div className="p-2 rounded-lg bg-primary/10 h-fit">
+                        <TrendIcon className="w-4 h-4 text-primary" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-xs md:text-sm mb-1">{trend.title}</p>
+                        <p className="text-xs md:text-sm text-muted-foreground">{trend.text}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         );
@@ -597,8 +680,13 @@ const baseQuizQuestions = [
         return (
           <div className="space-y-4 text-center">
             <h3 className="text-2xl font-semibold mb-4">V. Conclusion</h3>
-            <div className="bg-primary/10 p-6 rounded-lg border border-primary/20">
-              <p className="text-lg mb-4">Le Low Code / No Code représente l'avenir du développement d'applications</p>
+            <div className="bg-primary/10 p-6 rounded-lg border border-primary/20 space-y-3">
+              <p className="text-base md:text-lg">
+                En 2026, le Low Code / No Code ne consiste plus seulement à créer des applications avec des blocs visuels. Il évolue vers le développement assisté par l'intelligence artificielle, les agents autonomes et l'automatisation des processus.
+              </p>
+              <p className="text-sm md:text-base text-muted-foreground">
+                Il ne remplace donc pas les développeurs : il transforme leur rôle et facilite la collaboration entre équipes techniques et utilisateurs.
+              </p>
               <p className="text-sm text-muted-foreground">Merci de votre attention !</p>
             </div>
           </div>
@@ -699,7 +787,7 @@ const baseQuizQuestions = [
       <div className="container mx-auto max-w-6xl">
         <div className="text-3xl md:text-4xl font-bold mb-4 text-center">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-3">
-            Veille Technologique <span className="text-primary">2024-2025</span>
+            Veille Technologique <span className="text-primary">2025-2026</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mb-1">Low Code / No Code</p>
           <p className="text-xs md:text-sm text-muted-foreground">Présentation orale • 8-10 minutes</p>
